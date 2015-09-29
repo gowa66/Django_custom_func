@@ -1,0 +1,12 @@
+Django==1.8.1
+SQLAlchemy==1.0.4
+argparse==1.2.1
+dj-database-url==0.3.0
+django-crispy-forms==1.5.2
+django-postgrespool==0.3.0
+django-registration-redux==1.2
+gunicorn==19.3.0
+psycopg2==2.6
+requests==2.3.0
+whitenoise==1.0.6
+wsgiref==0.1.2
