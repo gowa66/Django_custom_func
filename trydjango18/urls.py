@@ -2,7 +2,7 @@ from django.conf import settings
 from django.conf.urls import include, url
 from django.conf.urls.static import static
 from django.contrib import admin
-
+from trydjango18 import views
 
 urlpatterns = [
     # Examples:
@@ -17,6 +17,12 @@ urlpatterns = [
     url(r'^accounts/', include('registration.backends.default.urls')),
 ]
 
+
+
 if settings.DEBUG:
 	urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 	urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+handler404 = 'trydjango18.views.custom_404'
+handler400 = 'views.custom_400'
+handler500 = 'views.custom_500'
