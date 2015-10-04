@@ -54,9 +54,7 @@ INSTALLED_APPS = (
     #my apps
     'newsletter',
     'blog',
-    'mptt',
-    'tagging',
-    'zinnia',
+    
     
 )
 
