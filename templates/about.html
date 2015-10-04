@@ -1,17 +1,40 @@
-{% extends "base.html" %}
+{% extends "base_2.html" %}
+{% load staticfiles %}
 
-
-{% block content %}
-
-<div class='raw'>
-<div class='col-sm-6 col-sm-offset-3'>
-<h1>About us</h1>
-<p> Bauntihanter.Bauntihanter.Bauntihanter.Bauntihanter.Bauntihanter.</p>
-<p>Bauntihanter.Bauntihanter.Bauntihanter.Bauntihanter.Bauntihanter.Bauntihanter.</p>
-<p> Bauntihanter.Bauntihanter.Bauntihanter.Bauntihanter.Bauntihanter.Bauntihanter.</p>
-</div>
-</div>
-
-
+{% block main %}
+ <!-- CONTENT BODY - START -->
+                <div class="col-sm-8">
+                    
+                	<div class="box">
+                    	                      
+                     	<div class="team-members-wrapper">
+                            
+                            <!-- TEAM MEMBER - START -->   
+                            <div class="team-member">
+                                <div class="row">
+                                    <div class="col-xs-3"><img src="{% static 'images/gaben2.png' %}" class="img-responsive center-block img-circle" alt=""></div>
+                                    <div class="col-xs-9">
+                                        <h2>Contact info</h2>
+                                        <ul class="list-unstyled">
+                                            
+                                            <li><strong>Email:</strong>gover66at@gmail.com</li>
+                                        </ul>
+                                        <p>Django 1.8, bootstrap.</p>
+                                        <ul class="brands brands-tn brands-circle brands-colored brands-inline">
+                                           <li><a href="https://www.facebook.com/pixelized.cz" target="_blank" class="brands-facebook"><i class="fa fa-facebook"></i></a></li>
+                                            <li><a href="https://twitter.com/Pixelizedcz" target="_blank" class="brands-twitter"><i class="fa fa-twitter"></i></a></li>
+                                            <li><a href="https://plus.google.com/+PixelizedCz/" target="_blank" class="brands-google-plus"><i class="fa fa-google-plus"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- TEAM MEMBER - END --> 
+                            
+                            
+                            
+                    	</div>
+                	</div>
+                </div>
+                <!-- CONTENT BODY - END -->
 
 {% endblock %}

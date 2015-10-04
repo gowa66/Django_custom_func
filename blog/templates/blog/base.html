@@ -1,0 +1,186 @@
+{% load staticfiles %}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- ==========================
+        Meta Tags 
+    =========================== -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- ==========================
+        Title 
+    =========================== -->
+    <title>Progaming</title>
+        
+    <!-- ==========================
+        Fonts 
+    =========================== -->
+    
+    <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,200,200italic,300,300italic,400italic,600,600italic,700,700italic,900&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <!-- ==========================
+        CSS 
+    =========================== -->
+    {% include 'head_css.html' %}
+     
+</head>
+<body>
+    <h1>progaming</h1>
+    
+    <!-- ==========================
+        HEADER - START 
+    =========================== -->
+    <header class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a href="{% url 'home' %}" class="navbar-brand visible-xs">Progaming</a>
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><i class="fa fa-bars"></i></button>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="{% url 'home' %}">Home</a></li>
+                    <li><a href="team.html">Admin team</a></li>
+                    <li><a href="profile.html">Profile</a></li>
+                    <li><a href="">Gaming</a></li>
+                    <li><a href="">Forum</a></li>
+                    <li><a href="">Pages</a></li>
+                    
+                </ul>
+                <div class="pull-right navbar-buttons hidden-xs">
+                    <ul class="nav navbar-nav navbar-right">
+                    {% if request.user.is_authenticated %}
+                    <li><a href="{% url 'auth_logout' %}" class="btn btn-inverse" >Logout</a></li>
+                    {% else %}
+                    <li><a href="{% url 'registration_register' %}" class="btn btn-primary" >Register</a></li>
+                    {% endif %}
+                    </ul>
+                    {% if not request.user.is_authenticated and not "/accounts/login" in request.get_full_path %}
+                    <form class='navbar-form navbar-right' method='POST' action='{% url "auth_login" %}' >{% csrf_token %}
+                    <div class='form-group'>
+                    <input type='text' class='form-control' name='username' placeholder='Username' />
+                    </div>
+                    <div class='form-group'>
+                    <input type='password' class='form-control' name='password' placeholder='Password' />
+                    </div>
+                    <button tipe='submit' class="btn btn-inverse" >Login</button>
+
+                    </form>
+                    {% endif %}
+                    
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ==========================
+        HEADER - END 
+    =========================== -->  
+    <!-- ==========================
+        TITLE - START 
+    =========================== -->
+    <div class="container hidden-xs">
+        <div class="header-title">
+            <div class="pull-left">
+                <h2><a href="{% url 'home' %}"><span class="text-primary">Gaben</span>322</a></h2>
+                <p>Best Steam roulette.</p>
+            </div>
+        </div>
+    </div>
+    <!-- ==========================
+        TITLE - END 
+    =========================== -->
+
+    <div class="container">
+    
+
+    {% block content %}
+
+    {% endblock %}
+
+    </div> 
+
+    {% include 'js.html' %}
+
+    
+    <!-- ==========================
+        FOOTER - START 
+    =========================== -->
+    <div class="container">
+        <div class="footer-boxes">
+            <div class="row">
+                        
+                <!-- FOOTER BOX - START -->
+                <div class="col-md-4 hidden-xs hidden-sm">
+                    <div class="box">
+                        <h4>About Us</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam auctor dictum nibh, ac gravida orci porttitor et. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac.</p>
+                    </div>
+                </div>
+                <!-- FOOTER BOX - END -->
+                
+                <!-- FOOTER BOX - START -->
+                <div class="col-sm-6 col-md-4">
+                    <div class="box footer-tags">
+                        <h4>Tags</h4>
+                        <a href=""><span class="text-10">Clean</span></a>
+                        <a href=""><span class="text-20">CV</span></a>
+                        <a href=""><span class="text-20">Flat</span></a>
+                        <a href=""><span class="text-14">Freelance</span></a>
+                        <a href=""><span class="text-20">Modern</span></a>
+                        <a href=""><span class="text-12">One Page</span></a>
+                        <a href=""><span class="text-14">Professional</span></a>
+                        <a href=""><span class="text-14">Responsive</span></a>
+                        <a href=""><span class="text-16">Resume</span></a>
+                        <a href=""><span class="text-20">Business</span></a>
+                        <a href=""><span class="text-16">Corporate</span></a>
+                        <a href=""><span class="text-18">CSS3</span></a>
+                        <a href=""><span class="text-12">HTML5</span></a>
+                        <a href=""><span class="text-16">Mobile First</span></a>
+                        <a href=""><span class="text-20">Multipurpose</span></a>
+                        <a href=""><span class="text-14">Portfolio</span></a>                   
+                    </div>
+                </div>
+                <!-- FOOTER BOX - END -->
+                
+                <!-- FOOTER BOX - START -->
+                <div class="col-sm-6 col-md-4 hidden-xs">
+                    <div class="box footer-posts">
+                        <h4>Recent Posts</h4>   
+                        <ul class="list-unstyled">
+                            <li><a href="#">Pellentesque habitant morbi</a> <span class="post-date">6.2.2015</span></li>
+                            <li><a href="#">Tristique senectus et netus</a> <span class="post-date">31.1.2015</span></li>
+                            <li><a href="#">Et malesuada fames ac</a> <span class="post-date">9.12.2014</span></li>
+                            <li><a href="#">Turpis egestas nullam</a> <span class="post-date">1.12.2014</span></li>
+                            <li><a href="#">Posuere magna a dapibus luctus</a> <span class="post-date">25.11.2014</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- FOOTER BOX - END -->
+                
+            </div>
+        </div>
+        <footer class="navbar navbar-default">
+            <div class="row">
+                <div class="col-md-6 hidden-xs hidden-sm">
+                    <ul class="nav navbar-nav">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="team.html">Admin team</a></li>
+                        <li><a href="profile.html">Profile</a></li>
+                        <li><a href="tournament.html">Tournament</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="forum.html">Forum</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <p class="copyright">© Progaming 2015 All right reserved. Designed by <a href="http://broservice.com.ua/" target="_blank">Gonzo IT.</a></p>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- ==========================
+        FOOTER - END 
+    =========================== -->
+
+  </body>
+</html>

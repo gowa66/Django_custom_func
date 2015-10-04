@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+{% for post in posts %}
+<div>
+  <h2>{{ post.timestamp }} : {{ post.title }}</h2>
+  <div class='bloglogo'><img src='/static/{{ post.logo }}'></div>
+    <div class='bloginfo'>
+    <p>{{ post.timestamp }}</p>
+    <p>{{ post.short_body }}</p>
+  <div>
+</div>
+<div style='clear:left'>&nbsp;</div>
+{% endfor %} 
+<p><small>Yunin Ivan 2010 &copy;</small></p> 
+{% endblock%}

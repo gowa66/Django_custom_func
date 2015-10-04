@@ -1,24 +1,17 @@
-{% extends "base.html" %}
-
-{% block jumbotron %}
-_
-{% endblock %}
-
-{% block content %}
+{% if request.user.is_authenticated %}
+<h1> You are Bauntihanter!</h1>
 
 
-<div class="row">
-  <div class="col-md-8 col-sm-6" style='background-color:red;'>.col-md-8</div>
-  <div class="col-md-4 col-sm-6" style='background-color:blue;'>.col-md-4</div>
-</div>
-<!-- <div class="row">
-  <div class="col-md-4">.col-md-4</div>
-  <div class="col-md-4">.col-md-4</div>
-  <div class="col-md-4">.col-md-4</div>
-</div>
-<div class="row">
-  <div class="col-md-6">.col-md-6</div>
-  <div class="col-md-6">.col-md-6</div>
-</div> -->
+	{% if queryset %}
+	<h2>Welcome papa</h2>
+	<table class='table'>
+	{% for instance in queryset %}
+		<tr><td>{{ instance }}</td><td> {{ instance.full_name }} </td><td>{{ instance.timestamp|timesince }} </td></tr>
+	{% endfor %}
+	</table>
 
-{% endblock %}
+	{% endif %}
+
+{% else %}
+
+{% endif %}

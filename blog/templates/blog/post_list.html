@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+
+{% block content %}
+    
+      
+    
+
+{% block blog %}
+<!-- ==========================
+    	CONTENT - START 
+    =========================== -->
+    <div class="container">
+        <section class="content-wrapper">
+        	
+            <div class="row forum-header">
+                <div class="col-sm-2 col-xs-3">
+                    	<a href="forum-single.html#" class="btn btn-primary"><i class="fa fa-edit"></i> New Thread</a>
+                    </div>
+                    <div class="col-sm-10 col-xs-9">
+                    <ul class="pagination">
+                        <li class="disabled"><a href="forum-single.html#"><i class="fa fa-angle-left"></i></a></li>
+                        <li class="active"><a href="forum-single.html#">1</a></li>
+                        <li><a href="forum-single.html#">2</a></li>
+                        <li><a href="forum-single.html#">3</a></li>
+                        <li><a href="forum-single.html#">4</a></li>
+                        <li><a href="forum-single.html#"><i class="fa fa-angle-right"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+
+            {% for post in object_list %}
+            <!-- POST - START -->
+                    <div class="box">
+                        <article class="post">
+                            <div class="post-date-wrapper">
+                                <div class="post-date">
+                                    
+                                    <div class="month">{{ post.datetime }}</div>
+                                </div>
+                                <div class="post-type">
+                                    <i class="fa fa-video-camera"></i>
+                                </div>
+                            </div>
+                            <div class="post-body">
+                                <h2>{{ post.title }}</h2>
+                                <p>{{ post.content }}</p>
+                                <div class="post-info">
+                                    <span>Posted by: admin</span>
+                                    <a href="{{ post.get_absolute_url }}" class="btn btn-inverse">View More</a>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+            <!-- POST - END -->
+            {% empty %}
+            <p>Нет постов</p>
+            {% endfor %}
+            
+
+            
+            <div class="row forum-header forum-footer">
+                <div class="col-sm-2 col-xs-3">
+                    	<a href="forum-single.html#" class="btn btn-primary"><i class="fa fa-edit"></i> New Thread</a>
+                    </div>
+                    <div class="col-sm-10 col-xs-9">
+                    <ul class="pagination">
+                        <li class="disabled"><a href="forum-single.html#"><i class="fa fa-angle-left"></i></a></li>
+                        <li class="active"><a href="forum-single.html#">1</a></li>
+                        <li><a href="forum-single.html#">2</a></li>
+                        <li><a href="forum-single.html#">3</a></li>
+                        <li><a href="forum-single.html#">4</a></li>
+                        <li><a href="forum-single.html#"><i class="fa fa-angle-right"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            
+        </section>
+    </div>
+    <!-- ==========================
+    	CONTENT - END 
+    =========================== -->
+  
+    {% endblock %}
+    
+    {% endblock %}

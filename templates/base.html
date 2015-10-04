@@ -29,6 +29,8 @@
 <body>
     <h1>progaming</h1>
     
+
+    {% block navbar-fixed-top %}
     <!-- ==========================
         HEADER - START 
     =========================== -->
@@ -41,11 +43,9 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li><a href="{% url 'home' %}">Home</a></li>
-                    <li><a href="team.html">Admin team</a></li>
-                    <li><a href="profile.html">Profile</a></li>
-                    <li><a href="">Gaming</a></li>
-                    <li><a href="">Forum</a></li>
-                    <li><a href="">Pages</a></li>
+                    <li><a href="{% url 'list' %}">Blog</a></li>
+                    <li><a href="{% url 'about' %}">About</a></li>
+
                     
                 </ul>
                 <div class="pull-right navbar-buttons hidden-xs">
@@ -75,21 +75,26 @@
     </header>
     <!-- ==========================
         HEADER - END 
-    =========================== -->  
+    =========================== -->
+    {% endblock %}
+
+    {% block title %}  
     <!-- ==========================
         TITLE - START 
     =========================== -->
     <div class="container hidden-xs">
         <div class="header-title">
             <div class="pull-left">
-                <h2><a href="{% url 'home' %}"><span class="text-primary">Pro</span>gaming</a></h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                <h2><a href="{% url 'home' %}"><span class="text-primary">Gaben</span>322</a></h2>
+                <p>Best Steam roulette.</p>
             </div>
         </div>
     </div>
     <!-- ==========================
         TITLE - END 
     =========================== -->
+    {% endblock %}
+
 
     <div class="container">
     
@@ -103,6 +108,8 @@
     {% include 'js.html' %}
 
     
+
+    {% block footer %}
     <!-- ==========================
         FOOTER - START 
     =========================== -->
@@ -164,12 +171,9 @@
             <div class="row">
                 <div class="col-md-6 hidden-xs hidden-sm">
                     <ul class="nav navbar-nav">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="team.html">Admin team</a></li>
-                        <li><a href="profile.html">Profile</a></li>
-                        <li><a href="tournament.html">Tournament</a></li>
-                        <li><a href="gallery.html">Gallery</a></li>
-                        <li><a href="forum.html">Forum</a></li>
+                        <li><a href="{% url 'home' %}">Home</a></li>
+                        <li><a href="{% url 'list' %}">Blog</a></li>
+                        <li><a href="{% url 'about' %}">About</a></li>
                     </ul>
                 </div>
                 <div class="col-md-6">
@@ -181,6 +185,7 @@
     <!-- ==========================
         FOOTER - END 
     =========================== -->
+    {% endblock %}
 
   </body>
 </html>

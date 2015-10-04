@@ -25,6 +25,7 @@ SECRET_KEY = 'ecqlugw4v_gm_e6dd35b-8)e0u=j7h=2a1d*ts$c&*0w8g2@8j'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+
 ALLOWED_HOSTS = []
 
 EMAIL_HOST = 'smtp.gmail.com'
@@ -45,11 +46,17 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_comments',
     #third party apps
     'crispy_forms',
     'registration',
+    'disqus',
     #my apps
     'newsletter',
+    'blog',
+    'mptt',
+    'tagging',
+    'zinnia',
     
 )
 
@@ -76,6 +83,7 @@ TEMPLATES = [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
+                'django.template.context_processors.i18n',
                 'django.contrib.messages.context_processors.messages',
             ],
         },
@@ -99,9 +107,9 @@ DATABASES = {
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'ru-ru'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/Kiev'
 
 USE_I18N = True
 
@@ -135,3 +143,6 @@ ACCOUNT_ACTIVATION_DAYS = 7
 REGISTRATION_AUTO_LOGIN = True
 SITE_ID = 1
 LOGIN_REDIRECT_URL = '/'
+
+DISQUS_API_KEY = 'C7FP5QYGnId3e47MZa7b7BH872rttLc4soAUH9I91RqOJ2QcqY93gJ5GX116Q7IE'
+DISQUS_WEBSITE_SHORTNAME = 'dotarul'

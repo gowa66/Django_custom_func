@@ -1,5 +1,6 @@
-{% load staticfiles %}
 {% extends "base.html" %}
+{% load staticfiles %}
+
 
 <!DOCTYPE html>
 <html>
@@ -20,7 +21,8 @@
 </head>
 <body>
 
-            
+{% block content %}
+           
     <!-- ==========================
     	CONTENT - START 
     =========================== -->
@@ -31,8 +33,8 @@
                 <!-- ERROR - START -->
                 <div class="error">
                 	<h2>Error 404 - Page not found</h2>
-                	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam auctor dictum nibh, ac gravida orci porttitor et. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac.</p>
-                	<a href="index.html" class="btn btn-primary btn-lg">Back to Homepage</a>
+                	<p>Try one more time.</p>
+                	<a href="{% url 'home' %}" class="btn btn-primary btn-lg">Back to Homepage</a>
                 </div>
                 <!-- ERROR - END -->
                 
@@ -42,7 +44,7 @@
     <!-- ==========================
     	CONTENT - END 
     =========================== -->
-   
+ {% endblock %}     
 
    
 </body>

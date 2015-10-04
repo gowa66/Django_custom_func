@@ -4,17 +4,25 @@ from django.conf.urls.static import static
 from django.contrib import admin
 
 
+
+
 urlpatterns = [
     # Examples:
     url(r'^$', 'newsletter.views.home', name='home'),
     url(r'^contact/$', 'newsletter.views.contact', name='contact'),
     url(r'^about/$', 'trydjango18.views.about', name='about'),
-    url(r'^gowa/$', 'gowa.views.gowa', name='gowa'),
-    url(r'^gaben2/$', 'gaben2.views.gaben2', name='gaben2'),
-    # url(r'^blog/', include('blog.urls')),
+   
+    
 
     url(r'^admin/', include(admin.site.urls)),
     url(r'^accounts/', include('registration.backends.default.urls')),
+    url(r'^blog/', include('blog.urls')),
+    url(r'^weblog/', include('zinnia.urls', namespace='zinnia')),
+    url(r'^comments/', include('django_comments.urls')),
+
+    
+
+   
 ]
 
 

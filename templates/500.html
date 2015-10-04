@@ -1,5 +1,6 @@
-{% load staticfiles %}
 {% extends "base.html" %}
+{% load staticfiles %}
+
 
 <!DOCTYPE html>
 <html>
@@ -31,19 +32,20 @@
 </head>
 <body>
 
-            
+{% block content %}
+           
     <!-- ==========================
-    	CONTENT - START 
+        CONTENT - START 
     =========================== -->
     <div class="container">
         <section class="content-wrapper">
-        	<div class="box">
+            <div class="box">
                             
                 <!-- ERROR - START -->
                 <div class="error">
-                	<h2>Error 500 - Server Error.</h2>
-                	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam auctor dictum nibh, ac gravida orci porttitor et. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac.</p>
-                	<a href="index.html" class="btn btn-primary btn-lg">Back to Homepage</a>
+                    <h2>Error 500 - Server error.</h2>
+                    <p>Try one more time.</p>
+                    <a href="{% url 'home' %}" class="btn btn-primary btn-lg">Back to Homepage</a>
                 </div>
                 <!-- ERROR - END -->
                 
@@ -51,9 +53,9 @@
         </section>
     </div>
     <!-- ==========================
-    	CONTENT - END 
+        CONTENT - END 
     =========================== -->
-   
+ {% endblock %}  
 
    
 </body>
