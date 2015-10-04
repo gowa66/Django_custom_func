@@ -50,7 +50,7 @@ INSTALLED_APPS = (
     #third party apps
     'crispy_forms',
     'registration',
-    'disqus',
+    
     #my apps
     'newsletter',
     'blog',

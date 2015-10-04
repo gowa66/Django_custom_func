@@ -3,9 +3,6 @@ from django.conf.urls import patterns, url
 
 from blog.views import PostsListView, PostDetailView 
 
-# from django.conf.urls import patterns, url, include
-# from blog.views import archive
-
 urlpatterns = patterns('',
 url(r'^$', PostsListView.as_view(), name='list'), # то есть по URL http://имя_сайта/blog/ 
                                                # будет выводиться список постов
