@@ -1,6 +1,7 @@
-{% extends "base.html" %}
+ {% extends "base.html" %}
 {% load staticfiles %}
 
+{% load crispy_forms_tags %}
 
 {% block content %}
 
@@ -16,6 +17,54 @@
                     
                     <!-- SIDEBAR BOX - START -->
                     <div class="box sidebar-box widget-wrapper">
+
+
+{% if not request.user.is_authenticated %}
+    <div class="jumbotron">
+        
+</div>
+
+{% else %}
+{% endif %}
+
+
+
+
+{% if request.user.is_authenticated %}
+<h1> You are username!</h1>
+{{ request.user }} {{ user }}
+
+    {% if queryset %}
+    <h2>Welcome papa</h2>
+    
+    
+
+    {% endif %}
+
+{% else %}
+<div class="row">
+
+  <div>
+    
+
+            <p class='lead'>{{ title }}</p>
+            
+
+            <form method='POST' action=''>{% csrf_token %}
+
+            {{ form|crispy }}
+            <input class='btn btn-primary' type='submit' value='Sign Up' />
+
+            </form>
+    </div>  
+
+    
+
+
+</div>
+{% endif %}
+
+
                         <h3>Upcoming tournament</h3>
                         <div class="tournament">
                             <a href="tournament.html"><img src="{% static 'images/esl.png' %}" class="img-responsive" alt=""></a>

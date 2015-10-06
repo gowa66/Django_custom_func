@@ -50,6 +50,7 @@ INSTALLED_APPS = (
     #third party apps
     'crispy_forms',
     'registration',
+    'social_auth',
     
     #my apps
     'newsletter',
@@ -68,6 +69,21 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
 )
+
+GOOGLE_OAUTH2_CLIENT_ID = '894617274061-4b1at0bcuccnftki3ntopv73c41s5ru3.apps.googleusercontent.com'
+
+GOOGLE_OAUTH2_CLIENT_SECRET = '4E8BuWLfqInGx04lrySkQRjq'
+
+FACEBOOK_APP_ID = '1479681382337084'
+FACEBOOK_API_SECRET = '4570fbb58e397e8f4f1d7010afec54e5'
+FACEBOOK_EXTENDED_PERMISSIONS = ['email']
+
+AUTHENTICATION_BACKENDS = (
+                            'social_auth.backends.google.GoogleOAuth2Backend',
+                            'social_auth.backends.facebook.FacebookBackend',
+                            'django.contrib.auth.backends.ModelBackand',
+                            )
+
 
 ROOT_URLCONF = 'trydjango18.urls'
 
