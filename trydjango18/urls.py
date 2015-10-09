@@ -24,7 +24,7 @@ urlpatterns = [
     url(r'^blog/', include('blog.urls')),
 
     
-    
+    url(r'^user/', include('user_profile.urls')),
 
     
 

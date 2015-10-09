@@ -55,6 +55,7 @@ INSTALLED_APPS = (
     #my apps
     'newsletter',
     'blog',
+    'user_profile',
     
     
 )

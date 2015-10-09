@@ -1,0 +1,43 @@
+ {% extends "base_2.html" %}
+{% load staticfiles %}
+
+{% load crispy_forms_tags %}
+
+{% block title %} <title> {{ userProfile.user.username }} </title> {% endblock %}
+
+{% block main %}
+<!-- CONTENT BODY - START -->
+                <div class="col-sm-8">
+                    <div class="box">
+                        
+                        <!-- TEAM MEMBER - START -->   
+                        <div class="team-member single">
+                            <div class="row">
+                                <div class="col-sm-4 col-md-3">
+                                    
+                                   
+                                </div>
+                                <div class="col-sm-8 col-md-9">
+                                    <h2>Name:<small>{{ userProfile.user.username }}</small></h2>
+                                    
+                                    <h3>Bio:</h3><p>{{ userProfile.bio }}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- TEAM MEMBER - END --> 
+                    </div>
+                    
+                    <div class="box colored config">
+                        <a href="{% url 'update_profile' %}" class="btn btn-simple">Update bio</a> 
+                    </div>
+                    
+                    
+                <!-- CONTENT BODY - END -->
+
+
+               
+
+               
+
+
+{% endblock %}

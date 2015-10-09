@@ -1,0 +1,21 @@
+ {% extends "base_2.html" %}
+{% load staticfiles %}
+
+{% load crispy_forms_tags %}
+
+{% block title %} <title> Update Profile </title> {% endblock %}
+
+
+        {% block main %}
+
+        <h1> Your Profile </h1>
+        <form action="/user/send_update_profile/" method="POST">{% csrf_token %}
+            <label>
+                Bio:    
+            </label><br />
+        {{ form.bio }}
+        <button type="submit">Submit</button>
+        </form>    
+
+
+        {% endblock %}
