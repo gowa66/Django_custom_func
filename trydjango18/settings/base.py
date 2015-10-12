@@ -56,6 +56,7 @@ INSTALLED_APPS = (
     'newsletter',
     'blog',
     'user_profile',
+    'djangoChat', 
     
     
 )
