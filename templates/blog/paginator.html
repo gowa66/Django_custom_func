@@ -1,0 +1,37 @@
+ <html>
+<head>
+ {% include 'head_css.html' %}
+ </head>
+<body>
+        {% if object_list and paginator.num_pages > 1 %}
+        
+     
+
+
+
+        <ul class="pagination">
+            
+                {% if page_obj.has_previous %}
+                    <li><a href="?page={{ page_obj.previous_page_number }}{{ extra_vars }}"><i class="fa fa-angle-left"></i></a></li>
+                
+                {% endif %}
+
+                
+                    <li>&nbsp;Page {{ page_obj.number }} of {{ paginator.num_pages }}</li>
+               
+
+                {% if page_obj.has_next %}
+                    <li><a href="?page={{ page_obj.next_page_number }}{{ extra_vars }}"><i class="fa fa-angle-right"></i></a></li>
+                {% endif %}
+            
+        </ul>>
+       
+
+
+        {% endif %}
+
+
+{% include 'js.html' %}
+
+  </body>
+</html>

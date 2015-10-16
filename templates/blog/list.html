@@ -1,0 +1,43 @@
+{% extends "bbase.html" %}
+
+<!-- SIDEBAR -->
+
+{% block post_sidebar %}
+        
+        {% for ym in view.months %}
+            {% ifchanged ym.0 %} {{ ym.0 }} <br /> {% endifchanged %}
+            <a href="{% url 'archive_month' ym.0 ym.1 %}" class="btn btn-primary active">{{ ym.2 }}</a><br />
+        {% endfor %}
+        
+        {% endblock %}
+
+<!-- LIST OF POSTS -->
+{% block post_content %}
+    
+     {% for post in blogpost_list %}
+        <!-- POST - START -->
+        <div class="box">
+                        <article class="post">
+                            <div class="post-date-wrapper">
+                                <div class="post-date">
+                                    
+                                    <div class="month">{{ post.created }}</div>
+                                </div>
+                                
+                            </div>
+                            <div class="post-body">
+                                <h2>{{ post.title }}</h2>
+                                <p>{{ post.body|linebreaks }}</p>
+                                <div class="post-info">
+                                    
+                                    <a href="{% url 'post' post.pk %}" class="btn btn-inverse">Comments ({{ post.comments.count }})</a>
+                                </div>
+                            </div>
+                        </article>
+        </div>  
+        <!-- POST - END -->
+    {% endfor %}
+        {% include "paginator.html" %}
+    
+{% endblock %}
+

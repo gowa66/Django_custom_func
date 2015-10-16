@@ -1,12 +1,10 @@
-#coding: utf-8
-from django.conf.urls import patterns, url
+from django.conf.urls import *
+from blog.models import *
+from blog.views import PostView, Main, ArchiveMonth
 
-from blog.views import PostsListView, PostDetailView 
-
-urlpatterns = patterns('',
-url(r'^$', PostsListView.as_view(), name='list'), # то есть по URL http://имя_сайта/blog/ 
-                                               # будет выводиться список постов
-url(r'^(?P<pk>\d+)/$', PostDetailView.as_view()), # а по URL http://имя_сайта/blog/число/ 
-                                              # будет выводиться пост с определенным номером
-# url(r"^$", archive), 
+urlpatterns = patterns("blog.views",
+   (r"^post/(?P<dpk>\d+)/$"          , PostView.as_view(), {}, "post"),
+   (r"^archive_month/(\d+)/(\d+)/$"  , ArchiveMonth.as_view(), {}, "archive_month"),
+   (r"^$"                            , Main.as_view(), {}, "main"),
+   # (r"^delete_comment/(\d+)/$"       , "delete_comment", {}, "delete_comment"),
 )

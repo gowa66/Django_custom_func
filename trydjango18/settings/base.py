@@ -46,6 +46,7 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_comments',
     
     #third party apps
     'crispy_forms',
@@ -56,7 +57,9 @@ INSTALLED_APPS = (
     'newsletter',
     'blog',
     'user_profile',
-    'djangoChat', 
+    'djangoChat',
+    
+  
     
     
 )
@@ -114,10 +117,15 @@ WSGI_APPLICATION = 'trydjango18.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'myproject',
+        'USER': 'gowa66',
+        'PASSWORD': 'gover62236',
+        'HOST': 'localhost',
+        'PORT': '',
     }
 }
+
 
 
 # Internationalization

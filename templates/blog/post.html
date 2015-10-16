@@ -1,0 +1,46 @@
+{% extends "bbase.html" %}
+{% block post_content %}
+
+<div class="box">
+    <!-- POST - START -->
+    <article class="post post-single">
+        <div class="post-date-wrapper">
+            <div class="post-date">
+                <div class="month">{{ blogpost.created }}</div>
+            </div>
+         
+        </div>
+        <div class="post-body">
+            <h2>{{ blogpost.title }}</h2>
+            <p>{{ blogpost.body|linebreaks }}</p>
+        </div>
+    </article>
+    <!-- POST - END -->
+{% for comment in blogcomment_list %}
+    <!-- COMMENT WRAPPER - START -->
+    <div class="comments">
+        
+        <ol class="commentlist">
+            <!-- COMMENT - START -->
+            <li class="comment">
+                <div class="comment-body">
+                    <div class="author">
+                        <h3>{{ comment.author }}</h3>
+                    </div>      
+                    <p class="message">{{ comment.body|linebreaks }}</p>
+                </div>
+    </div>
+    {% endfor %}
+    <!-- COMMENT FORM - END --> 
+    <div id="reply">
+        <form action="" method="POST"> {% csrf_token %}
+            <table>
+                {{ modelform.as_table }}
+            </table>
+            <input type="submit" value="Submit" style="margin:8px; margin-left:175px;"/>
+        </form>
+    </div>
+    <!-- COMMENT FORM - END -->  
+</div>
+<!-- CONTENT BODY - END -->
+{% endblock %}
