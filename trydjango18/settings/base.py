@@ -147,7 +147,7 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static_in_env", "static_root")
 
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, "static_in_pro", "our_static"),
+    # os.path.join(BASE_DIR, "static_in_pro", "our_static"),
     # os.path.join(BASE_DIR, "static_in_env"),
     # '/var/www/static/',
 )
@@ -165,5 +165,3 @@ REGISTRATION_AUTO_LOGIN = True
 SITE_ID = 1
 LOGIN_REDIRECT_URL = '/'
 
-DISQUS_API_KEY = 'C7FP5QYGnId3e47MZa7b7BH872rttLc4soAUH9I91RqOJ2QcqY93gJ5GX116Q7IE'
-DISQUS_WEBSITE_SHORTNAME = 'dotarul'
