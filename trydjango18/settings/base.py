@@ -58,7 +58,7 @@ INSTALLED_APPS = (
     'blog',
     'user_profile',
     'djangoChat',
-    
+    'portfolio',
   
     
     

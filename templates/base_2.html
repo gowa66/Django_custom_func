@@ -22,10 +22,10 @@
 
                     
 
-                        <h3>Profie</h3>
+                        
                         <div class="tournament">
                             {% if not request.user.is_authenticated %}
-                                <h4>Login if you can.</h4>
+                                <h4>To login - try username: test pass: test</h4>
                             
                             
                             <div class="box registration-form">
@@ -50,6 +50,7 @@
                             {% endif %}
 
                             {% if request.user.is_authenticated %}
+                            <h3>Profie</h3>
                             <a href='/user/profile/0/'>{{ user }}</a>
                             
 

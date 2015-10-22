@@ -31,13 +31,14 @@
     <header class="navbar navbar-default navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
-                <a href="{% url 'home' %}" class="navbar-brand visible-xs">Progaming</a>
+                <a href="{% url 'home' %}" class="navbar-brand visible-xs">Скачать бесплатно</a>
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><i class="fa fa-bars"></i></button>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li><a href="{% url 'home' %}">Home</a></li>
                     <li><a href='/blog/'>Blog</a></li>
+                    <li><a href='/portfolio/'>Gallery</a></li>
                     <li><a href="{% url 'index' %}">Chat</a></li>
                     <li><a href="{% url 'about' %}">About</a></li>
                     
@@ -92,8 +93,8 @@
     <div class="container hidden-xs">
         <div class="header-title">
             <div class="pull-left">
-                <h2><a href="{% url 'home' %}"><span class="text-primary">Gaben</span>322</a></h2>
-                <p>Best Steam roulette.</p>
+                <h2><a href="{% url 'home' %}"><span class="text-primary">Django</span>Tester</a></h2>
+                <p>Just have a fun.</p>
             </div>
         </div>
     </div>
@@ -105,11 +106,11 @@
 
     
     
-        <div class="container">
+        
         {% block content %}
 
         {% endblock %}
-        </div>
+        
 
     {% include 'js.html' %}
 
@@ -144,13 +145,14 @@
                     <ul class="nav navbar-nav">
                         <li><a href="{% url 'home' %}">Home</a></li>
                         <li><a href='/blog/'>Blog</a></li>
+                        <li><a href='/portfolio/'>Gallery</a></li>
                         <li><a href="{% url 'index' %}">Chat</a></li>
                         <li><a href="{% url 'about' %}">About</a></li>
                        
                     </ul>
                 </div>
                 <div class="col-md-6">
-                    <p class="copyright">© Progaming 2015 All right reserved. Designed by <a href="http://broservice.com.ua/" target="_blank">Gonzo IT.</a></p>
+                    <p class="copyright">© DjangoTester 2015 All right reserved. Designed by <a href="http://broservice.com.ua/" target="_blank">Gonzo IT.</a></p>
                 </div>
             </div>
         </footer>

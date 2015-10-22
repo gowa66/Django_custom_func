@@ -22,7 +22,7 @@ urlpatterns = [
     url(r'^accounts/', include('registration.backends.default.urls')),
    
 	url(r'^blog/', include('blog.urls')),
- 
+    url(r'^portfolio/', include('portfolio.urls')),
     url(r'^user/', include('user_profile.urls')),
 
     url(r'^chat/', include('djangoChat.urls')), 
@@ -30,9 +30,10 @@ urlpatterns = [
 
    
 ]
-
+   
 
 
 if settings.DEBUG:
 	urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 	urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+  
