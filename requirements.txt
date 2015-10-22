@@ -1,3 +1,4 @@
+--allow-all-external
 Django==1.8.1
 SQLAlchemy==1.0.4
 argparse==1.2.1
@@ -13,3 +14,4 @@ requests==2.3.0
 static3==0.6.1
 whitenoise==1.0.6
 wsgiref==0.1.2
+PIL==1.1.7
