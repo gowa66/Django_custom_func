@@ -15,4 +15,5 @@ requests==2.3.0
 static3==0.6.1
 whitenoise==1.0.6
 wsgiref==0.1.2
-PIL==1.1.7
+Pillow==1.7.8
+
