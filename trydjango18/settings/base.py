@@ -154,7 +154,11 @@ STATICFILES_DIRS = (
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static_in_env", "media_root")
 
-STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+MEDIAFILES_DIRS = (
+    os.path.join(BASE_DIR, "static_in_pro", "our_static"),
+    os.path.join(BASE_DIR, "static_in_env"),
+
+)
 
 #crispy from tags set
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
