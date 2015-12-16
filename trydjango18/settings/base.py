@@ -29,8 +29,8 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'gover66at@gmail.com'
-EMAIL_HOST_PASSWORD = 'govergowa62236'
+EMAIL_HOST_USER = 'example@gmail.com'
+EMAIL_HOST_PASSWORD = 'Password'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
